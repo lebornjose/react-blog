@@ -3,3 +3,40 @@ body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fo
   padding: 0;
   font-family: "Georgia," Times New Roman ",Times," Kai "," Kaiti SC "," KaiTi "," BiauKai "," 楷体 "," 楷体_GB2312 ",serif";
 }
+
+@font-face {
+  font-family: 'webfont';
+  font-display: swap;
+  src: url('//at.alicdn.com/t/webfont_tro5f7bfi8m.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/webfont_tro5f7bfi8m.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/webfont_tro5f7bfi8m.woff2') format('woff2'),
+  url('//at.alicdn.com/t/webfont_tro5f7bfi8m.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/webfont_tro5f7bfi8m.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/webfont_tro5f7bfi8m.svg#AlibabaPuHuiTiL') format('svg'); /* iOS 4.1- */
+}
+
+html{
+  font-family:"webfont" !important;
+  font-size:12px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+body{
+  background: #f1f1f1;
+}
+
+ul, ol li {
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: #444444;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  &:hover{
+    text-decoration: none;
+  }
+}
