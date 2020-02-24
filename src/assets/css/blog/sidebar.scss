@@ -1,0 +1,42 @@
+.sidebar-info{
+    background-color: #fff;
+    transition: all 0.25s ease 0s, opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0s;
+    background: #FFFFFF;
+    box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.1), 0 2px 4px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    margin: 20px auto;
+    padding: 20px 15px;
+    text-align: center;
+    img{
+        width: 200px;
+    }
+    .func-list {
+        font-size: 16px;
+        margin-top: 10px;
+        display: block;
+        height: 32px;
+        li{
+            float: left;
+            margin-left: 20px;
+        }
+        a{
+            line-height: 32px;
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            margin: 4px;
+            border-radius: 100px;
+            &:hover{
+                background: #3388ff4a;
+                color: #38f;
+            }
+        }
+        i{
+            font-size: 20px;
+        }
+    }
+    .nick {
+        font-size: 22px;
+        line-height: 50px;
+    }
+}
