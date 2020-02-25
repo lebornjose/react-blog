@@ -4,7 +4,7 @@ import infoImg from '../../../img/timg.jpeg';
 
 export default () => {
    return (
-     <div className="sidebar-info">
+     <div className="sidebar-info sidebar-block">
          <img src={infoImg}/>
          <p className="nick">๑۩ﺴ  Super Xing  ﺴ۩๑</p>
          <p className="desc">梦想永远是现代式，而绝非过去式</p>

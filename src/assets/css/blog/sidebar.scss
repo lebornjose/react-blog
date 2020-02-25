@@ -1,12 +1,41 @@
+.blog-sidebar{
+    .title{
+        font-size: 18px;
+        font-weight: initial;
+        line-height: 40px;
+        background-color: #38f;
+        color: #fff;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        padding-left: 15px;
+        i{
+            margin-right: 5px;
+            position: relative;
+        }
+    }
+    .content{
+        padding: 15px;
+    }
+
+    .sidebar-block{
+        background-color: #fff; 
+        box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.1), 0 2px 4px 0px rgba(0, 0, 0, 0.1);
+        transition: all 0.25s ease 0s, opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0s;
+        border-radius: 12px;
+        margin: 20px auto;
+    }
+}
+
+.sidebar-music{
+    padding-bottom: 15px;
+    .content {
+        margin: 15px;
+    }
+}
+
 .sidebar-info{
-    background-color: #fff;
-    transition: all 0.25s ease 0s, opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0s;
-    background: #FFFFFF;
-    box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.1), 0 2px 4px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    margin: 20px auto;
-    padding: 20px 15px;
     text-align: center;
+    padding: 15px;
     img{
         width: 200px;
     }
@@ -39,4 +68,33 @@
         font-size: 22px;
         line-height: 50px;
     }
+}
+
+.sidebar-nav{
+  li{
+      float: left;
+      width: 33.3%;
+      margin-top: 10px;
+      font-size: 12px;
+  }
+  a{
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      padding: 10px 0;
+      border-radius: 50%;
+      transition: all .5s ease;
+      &:hover{
+        background: #3388ff4a;
+        color: #38f;
+      }
+  }
+  .content{
+    text-align: center;
+    i{
+        display: block;
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+  }
 }
