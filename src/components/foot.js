@@ -55,6 +55,11 @@ class foot extends React.Component {
                         <a rel="license" href="https://ant.design/docs/react/customize-theme-cn" target="_blank" title="Antd">
                         <span class="badge-subject">Ant</span><span class="badge-value bg-ant">Antd</span>
                         </a>
+                    </div>  
+                    <div class="github-badge">
+                        <a rel="license" href="https://element.faas.ele.me/#/zh-CN" target="_blank" title="Element">
+                        <span class="badge-subject">Ele</span><span class="badge-value bg-ant">Element</span>
+                        </a>
                     </div>   
                 </div> 
             </div>
