@@ -1,0 +1,9 @@
+.blog-msg{
+    @extend %content-shadow;
+    .avator{
+        text-align: center;
+    }
+    .avator img{
+        width: 80px;
+    }
+}
