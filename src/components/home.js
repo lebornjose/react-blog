@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from './sidebar/index';
 import ItemArticle from '../components/article/item';
+import Foot from '../components/foot';
 
 
 export default () => {
@@ -20,7 +21,8 @@ export default () => {
                     <div className="col-md-4">
                         <Sidebar></Sidebar>
                     </div>
-                </div> 
+                </div>
+                <Foot></Foot> 
             </div>
     )
 }

@@ -28,6 +28,22 @@ class Music extends React.Component{
                   theme: '#38f'
                 },
                 {
+                   name: '七里香',
+                   artist: '周杰伦',
+                   url: 'http://xinblog.oss-cn-qingdao.aliyuncs.com/mp3/qilixiang.mp3',
+                   cover: 'http://p3fx.kgimg.com/stdmusic/400/20150720/20150720211645985155.jpg',
+                   lrc: 'http://xinblog.oss-cn-qingdao.aliyuncs.com/mp3/qilixiang.lrc',
+                   theme: '#e6a23c'
+                   
+                },
+                {
+                    name: '无与伦比的美丽',
+                    artist: '田馥甄',
+                    url: 'http://xinblog.oss-cn-qingdao.aliyuncs.com/mp3/2094314672.mp3',
+                    cover: 'http://p3fx.kgimg.com/stdmusic/400/20170517/20170517113947412108.jpg',
+                    lrc: 'http://xinblog.oss-cn-qingdao.aliyuncs.com/mp3/wuyulunbi.lrc'
+                },
+                {
                     name: '追梦赤子心',
                     artist: 'GALA',
                     url: 'http://xinblog.oss-cn-qingdao.aliyuncs.com/mp3/zhuimengchizixin.mp3',
@@ -41,7 +57,7 @@ class Music extends React.Component{
                   url: 'http://xinblog.oss-cn-qingdao.aliyuncs.com/mp3/%E8%AE%B8%E5%B5%A9%20-%20%E9%9B%85%E4%BF%97%E5%85%B1%E8%B5%8F.mp3',
                   cover: 'http://p1.music.126.net/Wcs2dbukFx3TUWkRuxVCpw==/3431575794705764.jpg?param=130y130',
                   lrc: 'http://xinblog.oss-cn-qingdao.aliyuncs.com/mp3/yasugongshang.lrc',
-                  theme: '#46718b'
+                  theme: '#f56c6c'
                 },
                 {
                     name: '惊鸿一面',
