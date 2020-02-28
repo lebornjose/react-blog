@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 import bg from './img/021.webp';
 import './assets/css/all.scss';
 import Home from './components/home';
@@ -24,11 +24,11 @@ function App() {
                     </div>
                     <div className="home-menu">
                         <ul>
-                            <li><Link to="/home"><i className="icon-home"></i>&nbsp;主页</Link></li>
-                            <li><Link to="/cat"><i className="icon-book"></i>&nbsp;分类</Link></li>
-                            <li><Link to="/msg"><i className="icon-comments"></i>&nbsp;留言</Link></li>
-                            <li><Link to="/product"><i className="icon-book"></i>&nbsp;产品</Link></li>
-                            <li><Link to="/about"><i className="icon-user"></i>&nbsp;关于</Link></li>
+                            <li><NavLink to="/home" activeClassName='active'><i className="icon-home"></i>&nbsp;主页</NavLink></li>
+                            <li><NavLink to="/cat" activeClassName='active'><i className="icon-book"></i>&nbsp;分类</NavLink></li>
+                            <li><NavLink to="/msg" activeClassName='active'><i className="icon-comments"></i>&nbsp;留言</NavLink></li>
+                            <li><NavLink to="/product" activeClassName='active'><i className="icon-book"></i>&nbsp;产品</NavLink></li>
+                            <li><NavLink to="/about" activeClassName='active'><i className="icon-user"></i>&nbsp;关于</NavLink></li>
                             <li><a target="_blank" rel="noopener noreferrer" href="http://www.leborn.me/blog/home/music"><i className="icon-film"></i>&nbsp;音乐</a></li>
                         </ul>
                     </div>
@@ -39,6 +39,8 @@ function App() {
                 <Route path='/product' component={Product}></Route>
                 <Route path='/about' component={About}></Route>
             </Router>
+
+            <a className="to-top"><i className="icon-arrow-up"></i></a>
         </div> 
     );
 }

@@ -90,6 +90,8 @@
             padding: 4px 8px;
             font-size: 14px;
             border-bottom: 1px solid #fff;
+            outline: none;
+            text-decoration: none;
             &.active,&:hover{
                 color: #2875e8;
                 border-bottom: 1px solid #2875e8;

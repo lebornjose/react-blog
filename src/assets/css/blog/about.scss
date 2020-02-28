@@ -1,3 +1,25 @@
 .about-blog{
     @extend %content-shadow;
+    max-width: 860px;
+    .avator{
+        text-align: center;
+    }
+    .avator img{
+        width: 80px;
+    }
+    .about-content{
+        line-height: 25px;
+        p{
+            margin-top: 10px;
+        }
+    }
+    .about-func{
+        margin-top: 40px;
+    }
+    .progress{
+        padding-left: 0;
+        height: 10px;
+        padding-right: 0;
+        margin-top: 5px;
+    }
 }
