@@ -1,68 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# my
 
-## Available Scripts
+> 测试
 
-In the project directory, you can run:
++ 博客地址： www.leborn.me
 
-### `yarn start`
+## Build Setup
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+``` bash
+# install dependencies
+npm install
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+# serve with hot reload at localhost:8080
+yarn start
 
-### `yarn test`
+# build for production with minification
+npm run build
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# run unit tests
+npm run unit
 
-### `yarn build`
+# run e2e tests
+npm run e2e
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# run all tests
+npm test
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##  关于适用React 搭建这个博客遇到的相关问题都在我的博客里面 [Suner xing](http://www.leborn.me)
 
-### `yarn eject`
+## 接口
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
++ 产品列表   /blog/home/jsonProduct
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
++ 文章列表   ／blog/home/jsonList
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
++ 文章分类   /blog/home/jsonCategory
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
++ 关于我    /blog/home/jsonAbout 
 
-## Learn More
++ 文章详情  /blog/home/jsonDetail/?id
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
++ 搜索接口  /http://www.leborn.me/blog/home/jsonSearch/keyword
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 接口暂时就写这么多吧
 
-### Code Splitting
+### 优化项
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+> 1. btn 样式提取

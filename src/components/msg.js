@@ -11,19 +11,22 @@ class Comment extends React.Component{
     render() {
         return(
             <div className="container blog-msg">
-            <div className="avator">
-                <img src={avator} />
+                <div className="avator">
+                    <img src={avator} />
+                </div>
+                <p className="talk">采用 Gitalk 评论系统，需使用 GitHub 账号登录，请尽情灌水吧！😉</p>
+
+                <p className="title">在这里可以灌水、吹牛、扯淡，但不可以订外卖!</p>
+                <GitalkComponent options={{
+                    clientID: "2f8d419fd8465cb46365",
+                    clientSecret: "5eef734ad88addccc0f00d8944d0732bf3aab6e6",
+                    repo: 'https://github.com/lebornjose/blog-comment',
+                    owner: 'lebornjose',
+                    admin: ['lebornjose'],
+                    id: "111111",  
+                    distractionFreeMode: false 
+                    }} />
             </div>
-            <GitalkComponent options={{
-                clientID: "2f8d419fd8465cb46365",
-                clientSecret: "5eef734ad88addccc0f00d8944d0732bf3aab6e6",
-                repo: 'https://github.com/lebornjose/blog-comment',
-                owner: 'lebornjose',
-                admin: ['lebornjose'],
-                id: "111111",  
-                distractionFreeMode: false 
-                }} />
-        </div>
         )
     }
 }

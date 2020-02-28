@@ -1,0 +1,35 @@
+.product-list{
+    .item-product{
+        margin-top: 20px;
+        @extend %content-shadow;
+        display: block;
+        height: 200px;
+        position: relative;
+        .title{
+            font-size: 18px;
+            font-weight: initial;
+        }
+        .desc{
+            margin-top: 10px;
+            line-height: 24px;
+            color: #666;
+        }
+        .tip{
+            margin-top: 10px;
+        }
+        i{
+            margin-right: 5px;
+        }
+        .btn{
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            background-color: #38f;
+            border-color: #38f;
+        }
+    }
+    .cover{
+        width: 180px;
+        border-radius: 4px;
+    }
+}
