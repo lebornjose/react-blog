@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
-import bg from './img/021.webp';
 import './assets/css/all.scss';
 import Home from './components/home';
 import Category from './components/category';
@@ -43,7 +42,7 @@ class App extends React.Component{
         }
         }, 1)
     } 
-    goTop = () => {
+    goTop() {
         let currentY = document.documentElement.scrollTop || document.body.scrollTop
         this.scrollAnimation(currentY, 0);
     }
@@ -51,27 +50,6 @@ class App extends React.Component{
         return(
             <div>
                 <Router>
-                    <div className="home-top container-fluid cover">
-                        <div className="bg">
-                            <img src={bg} alt="背景" className="bg-img"/>
-                        </div>
-                        <div className="home-search">
-                            <div className="searchFrom">
-                                <input type="text" className="input" placeholder="世界这么大，探索一下"/>
-                                <i className="icon icon-search"></i>
-                            </div> 
-                        </div>
-                        <div className="home-menu">
-                            <ul>
-                                <li><NavLink to="/home" activeClassName='active'><i className="icon-home"></i>&nbsp;主页</NavLink></li>
-                                <li><NavLink to="/cat" activeClassName='active'><i className="icon-book"></i>&nbsp;分类</NavLink></li>
-                                <li><NavLink to="/msg" activeClassName='active'><i className="icon-comments"></i>&nbsp;留言</NavLink></li>
-                                <li><NavLink to="/product" activeClassName='active'><i className="icon-book"></i>&nbsp;产品</NavLink></li>
-                                <li><NavLink to="/about" activeClassName='active'><i className="icon-user"></i>&nbsp;关于</NavLink></li>
-                                <li><a target="_blank" rel="noopener noreferrer" href="http://www.leborn.me/blog/home/music"><i className="icon-film"></i>&nbsp;音乐</a></li>
-                            </ul>
-                        </div>
-                    </div>
                     <Route path='/home' component={Home}></Route>
                     <Route path='/cat' component={Category}></Route>
                     <Route path='/msg' component={Msg}></Route>

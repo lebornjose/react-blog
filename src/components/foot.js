@@ -11,6 +11,7 @@ class foot extends React.Component {
                     <li><a href="">开源中国</a></li>
                     <li><a href="">一米一粟</a></li>
                     <li><a href="">Kooteam</a></li>
+                    <li><a href="https://about.sourcegraph.com/" target="_blank" rel="noopener noreferrer">sourcegraph</a></li>
                     <li><a href="">酷壳</a></li>
                     <li><a href="">子衿</a></li>
                 </ul>
@@ -59,6 +60,11 @@ class foot extends React.Component {
                     <div class="github-badge">
                         <a rel="license" href="https://element.faas.ele.me/#/zh-CN" target="_blank" title="Element">
                         <span class="badge-subject">Ele</span><span class="badge-value bg-ant">Element</span>
+                        </a>
+                    </div>   
+                    <div class="github-badge">
+                        <a rel="license" href="https://github.com/MoePlayer/APlayer" target="_blank" title="APlayer">
+                        <span class="badge-subject">Music</span><span class="badge-value bg-red">APlayer</span>
                         </a>
                     </div>   
                 </div> 
