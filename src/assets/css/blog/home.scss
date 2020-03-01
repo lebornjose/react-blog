@@ -1,3 +1,17 @@
+.blog-cat{
+    .bg{
+        height: calc(60vh)!important;
+    }
+    &.cover{
+        height: calc(60vh)!important;
+    }
+    .bg-img{
+        height: 580px!important;
+    }
+    .home-search{
+        margin-top: 220px!important;
+    }
+}
 .home-top{
     position: relative;
     .bg{
