@@ -38,10 +38,10 @@ class App extends React.Component{
         } else {
             window.scrollTo(_currentY, targetY)
         }
-        }, 1)
+        }, 1);
     } 
-    goTop() {
-        let currentY = document.documentElement.scrollTop || document.body.scrollTop
+    goTop = () => {
+        let currentY = document.documentElement.scrollTop || document.body.scrollTop;
         this.scrollAnimation(currentY, 0);
     }
     render(){
