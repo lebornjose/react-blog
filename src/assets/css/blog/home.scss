@@ -1,4 +1,8 @@
 .blog-cat{
+    .home-menu a{
+        color: #fff!important;
+        border: 1px solid transparent!important;
+    }
     .bg{
         height: calc(60vh)!important;
     }
@@ -10,6 +14,23 @@
     }
     .home-search{
         margin-top: 220px!important;
+    }
+    .home-search{
+        .icon{
+            color: #fff!important;
+        }
+        input::-webkit-input-placeholder { /* WebKit browsers 适配谷歌 */
+            color: #fff;
+        }
+        input:-moz-placeholder { /* Mozilla Firefox 4 to 18 适配火狐 */
+            color: #fff;
+        }
+        input::-moz-placeholder { /* Mozilla Firefox 19+ 适配火狐 */
+            color: #fff;
+        }
+        input:-ms-input-placeholder { /* Internet Explorer 10+  适配ie*/
+            color: #fff;
+        }
     }
 }
 .home-top{
@@ -74,18 +95,18 @@
             line-height: 16px;
             height: 44px;
             width: 100%;
-            color: #1BC3FB;
+            color: #38f;
             box-shadow: none;
             box-sizing: border-box;
             -webkit-appearance: none;
             padding-left: 36px;
             border-radius: 56px;
             background: rgba(33,150,243,0.1);
-            border: 1px solid #1BC3FB;
+            border: 1px solid #38f;;
             outline: none;
             transition: all .3s ease;
             &:focus{
-                border: 3px solid #1BC3FB;
+                border: 3px solid #38f;
             }
         }
         .icon{
@@ -113,7 +134,7 @@
             text-decoration: none;
             &.active,&:hover{
                 color: #2875e8;
-                border-bottom: 1px solid #2875e8;
+                border-bottom: 1px solid #2875e8!important;
             }
         }
     }

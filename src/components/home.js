@@ -44,7 +44,7 @@ class Home extends React.Component{
                     <div className="home-menu">
                         <ul>
                             <li><a to="/home" className='active'><i className="icon-home"></i>&nbsp;主页</a></li>
-                            <li><a href="/cat"><i className="icon-book"></i>&nbsp;分类</a></li>
+                            <li><a href="/cat"><i className="icon-archive"></i>&nbsp;分类</a></li>
                             <li><a href="/msg"><i className="icon-comments"></i>&nbsp;留言</a></li>
                             <li><a href="/product"><i className="icon-book"></i>&nbsp;产品</a></li>
                             <li><a href="/about"><i className="icon-user"></i>&nbsp;关于</a></li>
