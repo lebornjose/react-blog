@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 import './assets/css/all.scss';
 import Home from './components/home';
 import Cat from './components/cat';
-import Foot from './components/foot';
+import Head from './components/mods/head';
+import Foot from './components/mods/foot';
 
 
 class App extends React.Component{
@@ -47,16 +48,7 @@ class App extends React.Component{
     render(){
         return(
             <div>
-                <header className="blog-header">
-                    <span className="logo">Super xing</span>
-                    <ul>
-                        <li><a href=""><i className="icon-home"></i>主页</a></li>
-                        <li><a href=""><i className="icon-archive"></i>分类</a></li>
-                        <li><a href=""><i className="icon-comments"></i>留言</a></li>
-                        <li><a href=""><i className="icon-book"></i>产品</a></li>
-                        <li><a href=""><i className="icon-user"></i>关于</a></li>
-                    </ul>
-                </header>
+                <Head isTop={this.state.isTop}></Head>
                 <Router>
                     <Route path='/home' component={Home}></Route>
                     <Route path='/cat' component={Cat}></Route>
