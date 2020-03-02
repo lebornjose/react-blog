@@ -5,6 +5,7 @@ import Category from '../components/category';
 import Msg from '../components/msg';
 import Product from '../components/product';
 import About from '../components/about';
+import Detail from '../components/detail';
 
 
 class Cat extends React.Component{
@@ -24,19 +25,20 @@ class Cat extends React.Component{
                 <div className="home-menu">
                     <ul>
                         <li><a href="/home"><i className="icon-home"></i>&nbsp;主页</a></li>
-                        <li><NavLink to="/cat" activeClassName='active'><i className="icon-archive"></i>&nbsp;分类</NavLink></li>
-                        <li><NavLink to="/msg" activeClassName='active'><i className="icon-comments"></i>&nbsp;留言</NavLink></li>
-                        <li><NavLink to="/product" activeClassName='active'><i className="icon-book"></i>&nbsp;产品</NavLink></li>
-                        <li><NavLink to="/about" activeClassName='active'><i className="icon-user"></i>&nbsp;关于</NavLink></li>
+                        <li><NavLink to="/cat/category" activeClassName='active'><i className="icon-archive"></i>&nbsp;分类</NavLink></li>
+                        <li><NavLink to="/cat/msg" activeClassName='active'><i className="icon-comments"></i>&nbsp;留言</NavLink></li>
+                        <li><NavLink to="/cat/product" activeClassName='active'><i className="icon-book"></i>&nbsp;产品</NavLink></li>
+                        <li><NavLink to="/cat/about" activeClassName='active'><i className="icon-user"></i>&nbsp;关于</NavLink></li>
                         <li><a target="_blank" rel="noopener noreferrer" href="http://www.leborn.me/blog/home/music"><i className="icon-film"></i>&nbsp;音乐</a></li>
+                        <li><NavLink to="/cat/detail" activeClassName='active'><i className="icon-user"></i>&nbsp;112</NavLink></li>
                     </ul>
                 </div>
             </div>
-            <Route path='/cat' component={Category}></Route>
-            <Route path='/msg' component={Msg}></Route>
-            <Route path='/product' component={Product}></Route>
-            <Route path='/about' component={About}></Route>
-            
+            <Route path='/cat/category' component={Category}></Route>
+            <Route path='/cat/msg' component={Msg}></Route>
+            <Route path='/cat/product' component={Product}></Route>
+            <Route path='/cat/about' component={About}></Route>
+            <Route path="/cat/detail" component={Detail}></Route>
         </Router>  
       )
     }
