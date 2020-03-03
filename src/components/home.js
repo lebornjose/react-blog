@@ -2,6 +2,7 @@ import React from 'react';
 import Sidebar from './sidebar/index';
 import ItemArticle from '../components/article/item';
 import bg from '../img/021.webp';
+import util from '../utils/index';
 
 class Home extends React.Component{
     constructor(props) {
@@ -9,8 +10,11 @@ class Home extends React.Component{
         this.state = {
             text: '颓废中保持乐观，忙碌中鄙视功利，永保一颗向往的心。',
             inx: 0,
+            page: 0,
             timer: 0,
-            textDom: null
+            textDom: null,
+            articleList: [],
+            more: false
         };
     }
     addText = () => {
@@ -25,10 +29,31 @@ class Home extends React.Component{
             clearTimeout(this.state.timer);
         }
     }
+    getList = () => {
+        util.get('/blog/home/page/' + this.state.page).then((res) => {
+            if(res.length===0) {
+               this.setState({more: true});
+               setTimeout(() => {
+                this.setState({more: false});
+               }, 2000);
+            }
+            if(this.state.articleList.length === 0) {
+                this.setState({articleList: res});
+            } else {
+                this.setState({articleList: this.state.articleList.concat(res)});
+            }
+        })
+    }
+    getMore = () => {
+        this.state.page++;
+        this.getList();
+    }
     componentDidMount() {
        this.addText();
+       this.getList();
     }
     render() {
+        let DOM = this.state.articleList.map((item, index) => ( <ItemArticle key={index} item={item}></ItemArticle>))
         return (
             <div>
                 <div className="home-top container-fluid cover">
@@ -44,10 +69,10 @@ class Home extends React.Component{
                     <div className="home-menu">
                         <ul>
                             <li><a to="/home" className='active'><i className="icon-home"></i>&nbsp;主页</a></li>
-                            <li><a href="/cat"><i className="icon-archive"></i>&nbsp;分类</a></li>
-                            <li><a href="/msg"><i className="icon-comments"></i>&nbsp;留言</a></li>
-                            <li><a href="/product"><i className="icon-book"></i>&nbsp;产品</a></li>
-                            <li><a href="/about"><i className="icon-user"></i>&nbsp;关于</a></li>
+                            <li><a href="/cat/category"><i className="icon-archive"></i>&nbsp;分类</a></li>
+                            <li><a href="/cat/msg"><i className="icon-comments"></i>&nbsp;留言</a></li>
+                            <li><a href="/cat/product"><i className="icon-book"></i>&nbsp;产品</a></li>
+                            <li><a href="/cat/about"><i className="icon-user"></i>&nbsp;关于</a></li>
                             <li><a target="_blank" rel="noopener noreferrer" href="http://www.leborn.me/blog/home/music"><i className="icon-film"></i>&nbsp;音乐</a></li>
                         </ul>
                     </div>
@@ -56,13 +81,9 @@ class Home extends React.Component{
                 <div className="home-main container">
                     <div className="row">
                         <div className="col-md-8 article-list">
-                            <ItemArticle></ItemArticle>
-                            <ItemArticle></ItemArticle>
-                            <ItemArticle></ItemArticle>
-                            <ItemArticle></ItemArticle>
-                            <ItemArticle></ItemArticle>
+                            {DOM}
                             <div className="article-more">
-                                <span className="more-btn">查看更多<i className="icon-long-arrow-down"></i></span>
+                                <span className="more-btn" onClick={this.getMore}>查看更多<i className="icon-long-arrow-down"></i></span>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -70,6 +91,7 @@ class Home extends React.Component{
                         </div>
                     </div>
                 </div>
+                <div className={`alert alert-danger ${this.state.more ? 'sh0w' : 'hidden'}`} role="alert">没有更多文章了!</div>
             </div>
         )
     }

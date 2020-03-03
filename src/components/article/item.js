@@ -1,29 +1,40 @@
 import React from 'react';
+import util from '../../utils/index';
 
 class Item extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            article: props.item,
+            num: 7
+        }
+    }
+    componentWillMount() {    
+        this.setState({num: parseInt(Math.random()*1000)});
+    }
     render() {
         return (
             <div className="item-article">
-                <h2 className="title">2019年 我的梦</h2>
+                <h2 className="title">{this.state.article.title}</h2>
                 <div className="article-info">
                     <span>
-                        <i className="icon-user"></i> 小刀
+                       <i className="icon-user"></i> {this.state.article.author}
                     </span>
                     <span>
-                        <i className="icon-calendar"></i> 2019-01-21
+                       <i className="icon-calendar"></i> {util.date(this.state.article.pubtime)}
                     </span>
                     <span>
-                        <i className="icon-eye-open"></i>109
+                        <i className="icon-eye-open"></i>{this.state.article.reads}
                     </span>
                     <span>
-                        <i className="icon-heart-empty"></i>1
+                        <i className="icon-heart-empty"></i>{this.state.num}
                     </span>
                 </div>
                 <div className="article-content">
-                具体操作sudo npm install -g create-react-appmkdir react-first-democd react-first-democreate-react-app react-clicd react-clinpm install (依赖安装完以后执行npm start)npm start错误$ react-scripts startThere might be a
+                  {this.state.article.summary}
                 </div>
                 <div className="article-bom">
-                <button type="button" class="btn btn-primary"><i className="icon-book"></i> 阅读全文</button>
+                <button type="button" className="btn btn-primary"><i className="icon-book"></i> 阅读全文</button>
                 </div>
             </div>
         )
