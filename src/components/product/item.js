@@ -2,18 +2,38 @@ import React from 'react';
 
 
 class ItemProduct extends React.Component{
+    constructor(props) {
+       super(props);
+    }
+    cover(id) {
+        let url = 'http://www.leborn.me/upload/';
+        url += id.substring(0,4) + "/" + id.substring(4,6) + "/"+ id.substring(6, id.length)+ ".jpg";
+        return url;
+    }
+    componentDidMount() {
+      
+    }
+    coverStyle = (id) => {
+        let url = 'http://www.leborn.me/upload/';
+        url += id.substring(0,4) + "/" + id.substring(4,6) + "/"+ id.substring(6, id.length)+ ".jpg";
+        console.log(url)
+        return {
+            backgroundImage: "url(" + url + ")",
+            backgroundSize: 'cover'
+        }
+    }
     render() {
         return (
             <div className="item-product row">
                 <div className="left col-md-4">
-                    <img className="cover" src="http://www.leborn.me/upload/1607/18/2315260041317.jpg"/>
+                    <div className="cover" style={this.coverStyle(this.props.item.commendId)}></div>
                 </div>
                 <div className="right col-md-8">
-                    <h3 className="title">Vue 版本博客</h3>
-                    <p className="desc">vue 真心是一个简介的框架，非常喜欢，我个博客也是我的vue.js 起步之路，后面也希望我和vue.js 都能走的更远</p>
-                    <p className="tip"><i className="icon-star"></i>用vue重新开发的博客系统</p>
+                    <h3 className="title">{this.props.item.title}</h3>
+                    <p className="desc">{this.props.item.describe}</p>
+                    <p className="tip"><i className="icon-star"></i>{this.props.item.note}</p>
                 </div>
-                <a type="button" class="btn btn-primary"><i className="icon-link"></i> 查看详情</a>
+                <a type="button" href={this.props.item.url} target="_blank" class="btn btn-primary"><i className="icon-link"></i> 查看详情</a>
             </div>
         )
     }

@@ -1,36 +1,51 @@
-
-
-export default (url, data) => {
-    return new Promise((resolve, reject) => {
-        // 初始化url
-        let dataString = url.indexOf('?') === -1 ? '?' : '&'
-        let callbackName = `jsonpCB_${Date.now()}`
-        url += `${dataString}callback=${callbackName}`
-        if (data) {
-         // 有请求参数，依次添加到url
-          for (let k in data) {
-            url += `&${k}=${data[k]}`
+;(function () {
+  /**
+   * JSONP操作
+   * @param url : 请求的url
+   * @param data : 发送数据
+   * @param jsonpcallback : 服务器给出的JSONP端口的API名称
+   * @param callback : 执行JSONP获取数据的回调函数
+   */
+  var jsonp = function (url, data, jsonpcallback, callback) {
+      var cbName = 'cb' + jsonp.count++;
+      var callbackName = 'window.jsonp.' + cbName;
+      window.jsonp[cbName] = function (jsonpData) {
+          try {
+              callback(jsonpData);
+          } finally {
+              script.parentNode.removeChild(script);
+              delete window.jsonp[cbName];
           }
-        }
-        let jsNode = document.createElement('script')
-        jsNode.src = url
-        // 触发callback，触发后删除js标签和绑定在window上的callback
-        window[callbackName] = result => {
-          delete window[callbackName]
-          document.body.removeChild(jsNode)
-          if (result) {
-            resolve(result)
-          } else {
-            reject('没有返回数据')
+      };
+      var script = document.createElement('script');
+      if (data) {
+          data = tool.encodeToURIString(data);
+      }
+      if (typeof jsonpcallback === 'string') {
+          var jsonpData = jsonpcallback + '=' + callbackName;
+      }
+      url = tool.hasSearch(url, data);
+      url = tool.hasSearch(url, jsonpData);
+      script.src = url;
+      document.body.appendChild(script);
+  };
+  jsonp.count = 0;
+  window.jsonp = jsonp;
+  var tool = {
+      encodeToURIString: function (data) {
+          if (!data) return '';
+          if (typeof data === 'string') return data;
+          var arr = [];
+          for (var n in data) {
+              if (!data.hasOwnProperty(n)) continue;
+              arr.push(encodeURIComponent(n) + '=' + encodeURIComponent(data[n]));
           }
-        }
-        // js加载异常的情况
-        jsNode.addEventListener('error', () => {
-          delete window[callbackName]
-          document.body.removeChild(jsNode)
-          reject('JavaScript资源加载失败')
-        }, false)
-        // 添加js节点到document上时，开始请求
-        document.body.appendChild(jsNode)
-    })
-};
+          return arr.join('&');
+      },
+      hasSearch: function (url, padString) {
+          if (!padString) return url;
+          if (typeof padString !== 'string') return url;
+          return url + (/\?/.test(url) ? '&' : '?') + padString;
+      }
+  }
+})();

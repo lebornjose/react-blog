@@ -1,8 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import './assets/css/all.scss';
 import Home from './components/home';
 import Cat from './components/cat';
+import Category from './components/category';
+import Msg from './components/msg';
+import Product from './components/product';
+import About from './components/about';
+import Detail from './components/detail';
 import Head from './components/mods/head';
 import Foot from './components/mods/foot';
 
@@ -46,12 +51,14 @@ class App extends React.Component{
         this.scrollAnimation(currentY, 0);
     }
     render(){
+        const { history } = this.props;
         return(
             <div>
-                <Head isTop={this.state.isTop}></Head>
                 <Router>
+                <Head isTop={this.state.isTop} ></Head>
                     <Route path='/home' component={Home}></Route>
-                    <Route path='/cat' component={Cat}></Route>
+                    <Route path='/cat' component={Cat}>
+                    </Route>
                 </Router>
                 <Foot></Foot> 
                 <a onClick={this.goTop} className={`to-top ${this.state.isTop ? 'show' : 'hidden'} `}><i className="icon-arrow-up"></i></a>

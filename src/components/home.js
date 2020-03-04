@@ -3,6 +3,7 @@ import Sidebar from './sidebar/index';
 import ItemArticle from '../components/article/item';
 import bg from '../img/021.webp';
 import util from '../utils/index';
+import { NavLink } from 'react-router-dom';
 
 class Home extends React.Component{
     constructor(props) {
@@ -22,7 +23,8 @@ class Home extends React.Component{
             let index = this.state.inx;
             index++
             this.setState({inx: index});
-            document.getElementById("J_text").innerHTML = this.state.text.slice(0, this.state.inx) + '_'
+            if(document.getElementById("J_text") !== null)
+               document.getElementById("J_text").innerHTML = this.state.text.slice(0, this.state.inx) + '_'
             this.setState({timer: setTimeout(this.addText, 200)});
         } else {
             document.getElementById("J_text").innerHTML = this.state.text//结束打字,移除 _ 光标
@@ -68,8 +70,8 @@ class Home extends React.Component{
                     </div>
                     <div className="home-menu">
                         <ul>
-                            <li><a to="/home" className='active'><i className="icon-home"></i>&nbsp;主页</a></li>
-                            <li><a href="/cat/category"><i className="icon-archive"></i>&nbsp;分类</a></li>
+                            <li><NavLink to="/home" className='active'><i className="icon-home"></i>&nbsp;主页</NavLink></li>
+                            <li><NavLink to="/cat/category"><i className="icon-archive"></i>&nbsp;分类</NavLink></li>
                             <li><a href="/cat/msg"><i className="icon-comments"></i>&nbsp;留言</a></li>
                             <li><a href="/cat/product"><i className="icon-book"></i>&nbsp;产品</a></li>
                             <li><a href="/cat/about"><i className="icon-user"></i>&nbsp;关于</a></li>

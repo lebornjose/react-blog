@@ -3,7 +3,7 @@
         margin-top: 20px;
         @extend %content-shadow;
         display: block;
-        height: 200px;
+        height: 240px;
         position: relative;
         .title{
             font-size: 18px;
@@ -29,7 +29,8 @@
         }
     }
     .cover{
-        width: 180px;
+        width: 200px;
         border-radius: 4px;
+        height: 160px;
     }
 }

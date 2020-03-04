@@ -57,7 +57,13 @@
         }
         .article-title{
             line-height: 40px;
+            height: 30px;
             color: #38f;
+            text-decoration: none;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            word-break: keep-all;
+            overflow: hidden;
         }
         .next{
             text-align: right;

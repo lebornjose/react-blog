@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 import util from '../../utils/index';
 
 class Item extends React.Component{
@@ -15,7 +16,7 @@ class Item extends React.Component{
     render() {
         return (
             <div className="item-article">
-                <h2 className="title">{this.state.article.title}</h2>
+                <h2 className="title"><NavLink to={'/cat/detail/' + this.state.article.articleId}>{this.state.article.title}</NavLink></h2>
                 <div className="article-info">
                     <span>
                        <i className="icon-user"></i> {this.state.article.author}
