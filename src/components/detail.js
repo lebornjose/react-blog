@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from '../components/sidebar/index'
 import util from '../utils/index';
+import { NavLink } from 'react-router-dom';
 
 
 class Detail extends React.Component{
@@ -10,17 +11,27 @@ class Detail extends React.Component{
             article: {},
             detail: {},
             perv: null,
-            next: null
+            next: null,
+            articleId: ''
         }
     }
     getData(id) {
+        this.setState({articleId: id});
         util.get("/blog/home/jsonDetail/" + id).then((data) => {
            this.setState({article: data.article[0], detail: data.detailVO, perv: data.article[1], next: data.article[2]});
            console.log(this.state.next)
         })
     }
+    componentWillReceiveProps() {
+        let id = this.props.match.params.id;
+        if(this.state.articleId !== '' && this.state.articleId !== id) {
+            this.setState({articleId: this.props.match.params.id});
+            this.getData();
+        }
+    }
     componentDidMount() {
-        this.getData(this.props.match.params.id);
+        let id = this.props.match.params.id
+        this.getData(id);
     }
     render() {
         return (
@@ -40,13 +51,13 @@ class Detail extends React.Component{
                         <div className="prev-next">
                             {
                                 this.state.perv ?  <div className="perv">
-                                <a className="arrow"><i className="icon-angle-left"></i>上一页</a>
-                                <a className="article-title">idea 激活 永久激活方法</a>
-                                <span><i className="icon-tags"></i>idea</span>
+                                <NavLink to={`/cat/detail/` + this.state.perv.articleId} className="arrow"><i className="icon-angle-left"></i>上一页</NavLink>
+                                 <a className="article-title">{this.state.perv.title}</a>
+                                <span><i className="icon-tags"></i>{this.state.perv.keyword}</span>
                                  </div> : ''
                             }
                             {this.state.next ? <div className="next">
-                                <a className="arrow">下一页<i className="icon-angle-right"></i></a>
+                                <NavLink to={`/cat/detail/` + this.state.next.articleId} className="arrow">下一页<i className="icon-angle-right"></i></NavLink>
                                 <a className="article-title">{this.state.next.title }</a>
                                 {<span className="tag"><i className="icon-tags"></i>{this.state.next.keyword}</span> }
                             </div> : '' }
