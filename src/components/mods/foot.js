@@ -7,15 +7,14 @@ class foot extends React.Component {
         return (
             <div className="footer">
                 <ul className="blog-link">
-                    <li><a href="">邪恶二进制</a></li>
-                    <li><a href="">开源中国</a></li>
-                    <li><a href="">一米一粟</a></li>
-                    <li><a href="">Kooteam</a></li>
+                    <li><a href="http://evilbinary.org/" target="_blank" rel="noopener noreferrer">邪恶二进制</a></li>
+                    <li><a href="https://www.oschina.net/" target="_blank" rel="noopener noreferrer">开源中国</a></li>
+                    <li><a href="https://kooteam.com" target="_blank" rel="noopener noreferrer">Kooteam</a></li>
                     <li><a href="https://about.sourcegraph.com/" target="_blank" rel="noopener noreferrer">sourcegraph</a></li>
-                    <li><a href="">酷壳</a></li>
-                    <li><a href="">子衿</a></li>
+                    <li><a href="https://coolshell.cn/" target="_blank" rel="noopener noreferrer">酷壳</a></li>
+                    <li><a href="https://iizhi.cn/" target="_blank" rel="noopener noreferrer">子衿</a></li>
                 </ul>
-                <p className="copyright">Copyright  2015-2020 鄂ICP备15011003号-1</p>
+                <p className="copyright">Copyright  2015-2020 <a href="http://www.beian.gov.cn/" target="_blank" rel="noopener noreferrer">鄂ICP备15011003号-1</a></p>
                 <div className="bottom">
                     <div className="github-badge">
                         <a rel="license" href="https://kooteam.com/" target="_blank" title="kooteam">

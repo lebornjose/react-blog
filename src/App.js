@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 import './assets/css/all.scss';
 import Home from './components/home';
 import Cat from './components/cat';
@@ -55,10 +55,18 @@ class App extends React.Component{
         return(
             <div>
                 <Router>
-                <Head isTop={this.state.isTop} ></Head>
-                    <Route path='/home' component={Home}></Route>
-                    <Route path='/cat' component={Cat}>
-                    </Route>
+                   <Head isTop={this.state.isTop} ></Head>
+                   <Route exact path="/" component={Home} />
+                   <Route exact path="/home" component={Home} />
+                   <Route path="/cat" render={() => 
+                    <Cat>
+                        <Route path="/cat/category" component={Category}></Route>
+                        <Route path="/cat/msg" component={Msg}></Route>
+                        <Route path="/cat/about" component={About}></Route>
+                        <Route path="/cat/product" component={Product}></Route>
+                        <Route path="/cat/detail" component={Detail}></Route>
+                    </Cat>
+                   } /> 
                 </Router>
                 <Foot></Foot> 
                 <a onClick={this.goTop} className={`to-top ${this.state.isTop ? 'show' : 'hidden'} `}><i className="icon-arrow-up"></i></a>

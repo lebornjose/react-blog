@@ -16,7 +16,6 @@ class ItemProduct extends React.Component{
     coverStyle = (id) => {
         let url = 'http://www.leborn.me/upload/';
         url += id.substring(0,4) + "/" + id.substring(4,6) + "/"+ id.substring(6, id.length)+ ".jpg";
-        console.log(url)
         return {
             backgroundImage: "url(" + url + ")",
             backgroundSize: 'cover'
@@ -33,7 +32,7 @@ class ItemProduct extends React.Component{
                     <p className="desc">{this.props.item.describe}</p>
                     <p className="tip"><i className="icon-star"></i>{this.props.item.note}</p>
                 </div>
-                <a type="button" href={this.props.item.url} target="_blank" class="btn btn-primary"><i className="icon-link"></i> 查看详情</a>
+                <a type="button" href={this.props.item.url} target="_blank" className="btn btn-primary"><i className="icon-link"></i> 查看详情</a>
             </div>
         )
     }

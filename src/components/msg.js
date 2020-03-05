@@ -12,9 +12,9 @@ class Comment extends React.Component{
         return(
             <div className="container blog-msg">
                 <div className="avator">
-                    <img src={avator} />
+                    <img src={avator} alt="super xing" />
                 </div>
-                <p className="talk">采用 Gitalk 评论系统，需使用 GitHub 账号登录，请尽情灌水吧！😉</p>
+                <p className="talk">采用 Gitalk 评论系统，需使用 GitHub 账号登录，请尽情灌水吧！<span>😉</span></p>
 
                 <p className="title">在这里可以灌水、吹牛、扯淡，但不可以订外卖!</p>
                 <GitalkComponent options={{

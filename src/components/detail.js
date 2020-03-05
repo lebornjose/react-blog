@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 
 class Detail extends React.Component{
+    mounted = false;
     constructor(props) {
         super(props);
         this.state = {
@@ -16,22 +17,30 @@ class Detail extends React.Component{
         }
     }
     getData(id) {
-        this.setState({articleId: id});
         util.get("/blog/home/jsonDetail/" + id).then((data) => {
-           this.setState({article: data.article[0], detail: data.detailVO, perv: data.article[1], next: data.article[2]});
-           console.log(this.state.next)
+            if(this.mounted){
+                this.setState({article: data.article[0], detail: data.detailVO, perv: data.article[1], next: data.article[2]});
+                console.log(this.state.next)
+            }
         })
     }
-    componentWillReceiveProps() {
-        let id = this.props.match.params.id;
-        if(this.state.articleId !== '' && this.state.articleId !== id) {
-            this.setState({articleId: this.props.match.params.id});
-            this.getData();
-        }
+    getArticle(id) {
+        this.props.history.push('/cat/detail/' + id);
+        util.get("/blog/home/jsonDetail/" + id).then((data) => {
+            this.setState({article: data.article[0], detail: data.detailVO, perv: data.article[1], next: data.article[2]});
+        })
     }
     componentDidMount() {
+        this.props.history.listen(() => {
+        //当路由切换时
+           window.scrollTo(0, 0);
+        });
+        this.mounted = true
         let id = this.props.match.params.id
         this.getData(id);
+    }
+    componentWillUnmount() {
+        this.mounted = false
     }
     render() {
         return (
@@ -51,16 +60,18 @@ class Detail extends React.Component{
                         <div className="prev-next">
                             {
                                 this.state.perv ?  <div className="perv">
-                                <NavLink to={`/cat/detail/` + this.state.perv.articleId} className="arrow"><i className="icon-angle-left"></i>上一页</NavLink>
-                                 <a className="article-title">{this.state.perv.title}</a>
+                                <a className="arrow" onClick={() => this.getArticle(this.state.perv.articleId)}><i className="icon-angle-left"></i>上一页</a>
+                                 <a className="article-title" onClick={() => this.getArticle(this.state.perv.articleId)}>{this.state.perv.title}</a>
                                 <span><i className="icon-tags"></i>{this.state.perv.keyword}</span>
                                  </div> : ''
                             }
-                            {this.state.next ? <div className="next">
-                                <NavLink to={`/cat/detail/` + this.state.next.articleId} className="arrow">下一页<i className="icon-angle-right"></i></NavLink>
-                                <a className="article-title">{this.state.next.title }</a>
+                            {
+                               this.state.next ? <div className="next">
+                                <a className="arrow" onClick={() => this.getArticle(this.state.next.articleId)}>下一页<i className="icon-angle-right"></i></a>
+                                <a className="article-title" onClick={() => this.getArticle(this.state.next.articleId)} >{this.state.next.title }</a>
                                 {<span className="tag"><i className="icon-tags"></i>{this.state.next.keyword}</span> }
-                            </div> : '' }
+                                </div> : ''
+                             }
                            
                         </div>
                     </div>

@@ -1,6 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
-
+import { NavLink } from 'react-router-dom'
 
 
 class Head extends React.Component{
@@ -21,11 +20,11 @@ class Head extends React.Component{
                         </div>
                         <div className="col-md-8">
                             <ul>
-                                <li><a href="/home" ><i className="icon-home"></i>主页</a></li>
-                                <li><a href="/cat/category"><i className="icon-archive"></i>分类</a></li>
-                                <li><a href="/cat/msg"><i className="icon-comments"></i>留言</a></li>
-                                <li><a href="/cat/product" onClick={this.jump}><i className="icon-book"></i>产品</a></li>
-                                <li><a href="/about"><i className="icon-user"></i>关于</a></li>
+                                <li><NavLink to="/home" ><i className="icon-home"></i>主页</NavLink></li>
+                                <li><NavLink to="/cat/category"><i className="icon-archive"></i>分类</NavLink></li>
+                                <li><NavLink to="/cat/msg"><i className="icon-comments"></i>留言</NavLink></li>
+                                <li><NavLink to="/cat/product"><i className="icon-book"></i>产品</NavLink></li>
+                                <li><NavLink to="/about"><i className="icon-user"></i>关于</NavLink></li>
                             </ul>
                         </div> 
                     </div> 

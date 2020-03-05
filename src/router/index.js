@@ -1,5 +1,4 @@
 
-import React from 'react';
 import App from '../App'
 import Home from '../components/home'
 import Cat from '../components/cat'

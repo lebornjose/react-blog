@@ -30,8 +30,9 @@
             display: block;
             padding: 0 15px;
             height: 50px;
+            text-decoration: none;
             transition: all 0.3s ease;
-            &:hover{
+            &:hover,&.active{
                 border-bottom: 5px solid #FFFFFF;
                 background-color: #2875e8;
             }

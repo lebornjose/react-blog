@@ -23,7 +23,7 @@ class About extends React.Component{
         return(
             <div className="container about-blog">
                 <div className="avator">
-                    <img src={avator}/>
+                    <img src={avator} alt="super xing"/>
                 </div>
                 <div className="about-content">
                     <div dangerouslySetInnerHTML={{ __html:this.state.content}}></div>

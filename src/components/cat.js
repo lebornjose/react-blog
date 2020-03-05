@@ -1,18 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 import bg from '../img/cover1.jpg';
-import Category from '../components/category';
-import Msg from '../components/msg';
-import Product from '../components/product';
-import About from '../components/about';
-import Detail from '../components/detail';
-import Home from '../components/home';
 
 
 class Cat extends React.Component{
     render() {
       return (
-        <Router>
+        <div>
             <div className="home-top blog-cat container-fluid cover">
                 <div className="bg">
                     <img src={bg} alt="背景" className="bg-img"/>
@@ -25,7 +19,7 @@ class Cat extends React.Component{
                 </div>
                 <div className="home-menu">
                     <ul>
-                        <li><a href="/home"><i className="icon-home"></i>&nbsp;主页</a></li>
+                        <li><NavLink to="/home"><i className="icon-home"></i>&nbsp;主页</NavLink></li>
                         <li><NavLink to="/cat/category" activeClassName='active'><i className="icon-archive"></i>&nbsp;分类</NavLink></li>
                         <li><NavLink to="/cat/msg" activeClassName='active'><i className="icon-comments"></i>&nbsp;留言</NavLink></li>
                         <li><NavLink to="/cat/product" activeClassName='active'><i className="icon-book"></i>&nbsp;产品</NavLink></li>
@@ -34,12 +28,9 @@ class Cat extends React.Component{
                     </ul>
                 </div>
             </div>
-            <Route path='/cat/category' component={Category}></Route>
-            <Route path='/cat/msg' component={Msg}></Route>
-            <Route path='/cat/product' component={Product}></Route>
-            <Route path='/cat/about' component={About}></Route>
-            <Route path="/cat/detail/:id" component={Detail}></Route> 
-        </Router>  
+            {this.props.children}
+        </div>    
+
       )
     }
 }
