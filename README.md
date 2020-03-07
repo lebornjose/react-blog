@@ -13,13 +13,15 @@ yarn start
 yarn build
 ```
 ### 应用
-[音乐播放器aplayer](https://aplayer.js.org/#/)
-[网页布局bootstrap](https://www.bootcss.com/)
-[react+sass+js](https://react.docschina.org/)
-[脚手架create-react-app](https://www.html.cn/create-react-app/docs/getting-started/)
-[axios](https://www.kancloud.cn/yunye/axios/234845)
-[留言系统Gitalk](https://gitalk.github.io/)
-[后台服务器和网络代理 express+nginx](https://www.expressjs.com.cn/)
++ [音乐播放器aplayer](https://aplayer.js.org/#/)
+
++ [网页布局bootstrap](https://www.bootcss.com/)
+
++ [react+sass+js](https://react.docschina.org/)
++ [脚手架create-react-app](https://www.html.cn/create-react-app/docs/getting-started/)
++ [axios](https://www.kancloud.cn/yunye/axios/234845)
++ [留言系统Gitalk](https://gitalk.github.io/)
++ [后台服务器和网络代理 express+nginx](https://www.expressjs.com.cn/)
 
 ##  关于适用React 搭建这个博客遇到的相关问题都在我的博客里面 [Super xing](http://www.leborn.me)
 
