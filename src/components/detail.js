@@ -73,8 +73,7 @@ class Detail extends React.Component{
                                 </div> : ''
                              }
                         </div>
-                        this.state.article ? 
-                        <GitalkComponent options={{
+                        {  this.state.article.articleId ?  <GitalkComponent options={{
                             clientID: "2f8d419fd8465cb46365",
                             clientSecret: "5eef734ad88addccc0f00d8944d0732bf3aab6e6",
                             repo: 'blog-comment',
@@ -82,7 +81,8 @@ class Detail extends React.Component{
                             admin: ['lebornjose'],
                             id: this.state.article.articleId,  
                             distractionFreeMode: false 
-                            }} /> 
+                            }} /> : ''
+                        } 
                     </div>
                     <div className="col-md-4">
                        <Sidebar></Sidebar> 
