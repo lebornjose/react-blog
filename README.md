@@ -68,19 +68,17 @@ yarn build
 <s>  路由嵌套问题 （终于搞定）</s>
 
 
-
-
 ### 剩余
-<s> 文章详情页面</s>
-<s> 渲染数据 </s>
-+ 评论系统 
-+ 文章详情 
++ <s> 文章详情页面</s>
++ <s> 渲染数据 </s>
++ <s> 评论系统(文章评论) </s> 
++ <s> 文章详情  </s>
 + 真是兼容性在适配一下
 + 搜索
-+ 文章评论
-
++ 加入统计
 
 ### react 设置静态资源CDN
 
+  关于嵌套路由(https://blog.csdn.net/qq_40816649/article/details/93469857)
   PUBLIC_URL=http://xinblog.oss-cn-qingdao.aliyuncs.com/react-blog/ yarn build
 

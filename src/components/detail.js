@@ -1,7 +1,7 @@
 import React from 'react';
 import Sidebar from '../components/sidebar/index'
 import util from '../utils/index';
-import { NavLink } from 'react-router-dom';
+import GitalkComponent from "gitalk/dist/gitalk-component";
 
 
 class Detail extends React.Component{
@@ -62,18 +62,27 @@ class Detail extends React.Component{
                                 this.state.perv ?  <div className="perv">
                                 <a className="arrow" onClick={() => this.getArticle(this.state.perv.articleId)}><i className="icon-angle-left"></i>上一页</a>
                                  <a className="article-title" onClick={() => this.getArticle(this.state.perv.articleId)}>{this.state.perv.title}</a>
-                                <span><i className="icon-tags"></i>{this.state.perv.keyword}</span>
+                                {/* <span><i className="icon-tags"></i>{this.state.perv.keyword}</span> */}
                                  </div> : ''
                             }
                             {
                                this.state.next ? <div className="next">
                                 <a className="arrow" onClick={() => this.getArticle(this.state.next.articleId)}>下一页<i className="icon-angle-right"></i></a>
                                 <a className="article-title" onClick={() => this.getArticle(this.state.next.articleId)} >{this.state.next.title }</a>
-                                {<span className="tag"><i className="icon-tags"></i>{this.state.next.keyword}</span> }
+                                {/* {<span className="tag"><i className="icon-tags"></i>{this.state.next.keyword}</span> } */}
                                 </div> : ''
                              }
-                           
                         </div>
+                        this.state.article ? 
+                        <GitalkComponent options={{
+                            clientID: "2f8d419fd8465cb46365",
+                            clientSecret: "5eef734ad88addccc0f00d8944d0732bf3aab6e6",
+                            repo: 'blog-comment',
+                            owner: 'lebornjose',
+                            admin: ['lebornjose'],
+                            id: this.state.article.articleId,  
+                            distractionFreeMode: false 
+                            }} /> 
                     </div>
                     <div className="col-md-4">
                        <Sidebar></Sidebar> 
