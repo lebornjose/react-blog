@@ -79,6 +79,6 @@ yarn build
 
 ### react 设置静态资源CDN
 
-  关于嵌套路由(https://blog.csdn.net/qq_40816649/article/details/93469857)
-  PUBLIC_URL=http://xinblog.oss-cn-qingdao.aliyuncs.com/react-blog/ yarn build
++ 关于嵌套路由(https://blog.csdn.net/qq_40816649/article/details/93469857)
++ PUBLIC_URL=http://xinblog.oss-cn-qingdao.aliyuncs.com/react-blog/ yarn build
 
