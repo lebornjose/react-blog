@@ -63,7 +63,6 @@ class Welcome extends React.Component{
     componentWillMount() {
         // eslint-disable-next-line
         this.setState({ip: returnCitySN.cip, city: returnCitySN.cname});
-        console.log(this.state.ip)
         this.getOSAndBrowser();
     }
     render() {

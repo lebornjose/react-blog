@@ -6,7 +6,7 @@ class ItemProduct extends React.Component{
        super(props);
     }
     cover(id) {
-        let url = 'http://www.leborn.me/upload/';
+        let url = 'http://api.leborn.me/upload/';
         url += id.substring(0,4) + "/" + id.substring(4,6) + "/"+ id.substring(6, id.length)+ ".jpg";
         return url;
     }
@@ -14,7 +14,7 @@ class ItemProduct extends React.Component{
       
     }
     coverStyle = (id) => {
-        let url = 'http://www.leborn.me/upload/';
+        let url = 'http://api.leborn.me/upload/';
         url += id.substring(0,4) + "/" + id.substring(4,6) + "/"+ id.substring(6, id.length)+ ".jpg";
         return {
             backgroundImage: "url(" + url + ")",

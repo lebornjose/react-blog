@@ -64,7 +64,7 @@ class App extends React.Component{
                         <Route path="/cat/msg" component={Msg}></Route>
                         <Route path="/cat/about" component={About}></Route>
                         <Route path="/cat/product" component={Product}></Route>
-                        <Route path="/cat/detail" component={Detail}></Route>
+                        <Route path="/cat/detail/:id" component={Detail}></Route>
                     </Cat>
                    } /> 
                 </Router>

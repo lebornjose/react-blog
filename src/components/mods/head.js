@@ -24,7 +24,7 @@ class Head extends React.Component{
                                 <li><NavLink to="/cat/category"><i className="icon-archive"></i>分类</NavLink></li>
                                 <li><NavLink to="/cat/msg"><i className="icon-comments"></i>留言</NavLink></li>
                                 <li><NavLink to="/cat/product"><i className="icon-book"></i>产品</NavLink></li>
-                                <li><NavLink to="/about"><i className="icon-user"></i>关于</NavLink></li>
+                                <li><NavLink to="/cat/about"><i className="icon-user"></i>关于</NavLink></li>
                             </ul>
                         </div> 
                     </div> 

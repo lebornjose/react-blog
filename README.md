@@ -3,27 +3,14 @@
 > 测试
 
 + 博客地址： www.leborn.me
-
 ## Build Setup
-
 ``` bash
 # install dependencies
-npm install
-
+yarn install
 # serve with hot reload at localhost:8080
 yarn start
-
 # build for production with minification
-npm run build
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+yarn build
 ```
 
 
@@ -53,8 +40,8 @@ npm test
 
 <s> react 路由页面通畅</s>
 <s> header 导航完成 </s>
-+ 解决留言的问题
-<s> 路由还是有点问题，要修改一下</s>
+<s> 解决留言的问题 </s>
+ <s> 路由还是有点问题，要修改一下</s>
 <s> 文章详情页页面</s>
 <s> 获取IP，浏览器版本问题</s>
 <s>文章详情页面</s>
@@ -67,9 +54,15 @@ npm test
 
 ### 剩余
 <s> 文章详情页面</s>
-+ 浏览暂时不可行
 <s> 渲染数据 </s>
 + 评论系统 
 + 文章详情 
 + 真是兼容性在适配一下
++ 搜索
++ 文章评论
+
+
+### react 设置静态资源CDN
+
+  PUBLIC_URL=http://xinblog.oss-cn-qingdao.aliyuncs.com/react-blog/ yarn build
 

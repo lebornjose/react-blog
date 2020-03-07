@@ -20,7 +20,7 @@ class Comment extends React.Component{
                 <GitalkComponent options={{
                     clientID: "2f8d419fd8465cb46365",
                     clientSecret: "5eef734ad88addccc0f00d8944d0732bf3aab6e6",
-                    repo: 'https://github.com/lebornjose/blog-comment',
+                    repo: 'blog-comment',
                     owner: 'lebornjose',
                     admin: ['lebornjose'],
                     id: "111111",  
