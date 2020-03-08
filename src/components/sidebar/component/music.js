@@ -90,6 +90,14 @@ class Music extends React.Component{
                     cover: 'http://p1.music.126.net/NYcGC00Hm38sh83ZkXZyRQ==/91259465122701.jpg?param=130y130',
                     lrc: 'http://xinblog.oss-cn-qingdao.aliyuncs.com/mp3/wuding.lrc',
                     theme: '#38f'
+                },
+                {
+                    name: 'five hundred miles',
+                    artist: 'Justin',
+                    url: 'https://xinblog.oss-cn-qingdao.aliyuncs.com/mp3/4141660308.mp3',
+                    cover: 'http://p3fx.kgimg.com/stdmusic/400/20131009/20131009143610650448.jpg',
+                    lrc: 'https://xinblog.oss-cn-qingdao.aliyuncs.com/mp3/Five%20Hundred%20Miles',
+                    theme: '#46718b'
                 }
             ]
         });

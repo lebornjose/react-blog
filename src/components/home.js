@@ -19,15 +19,18 @@ class Home extends React.Component{
         };
     }
     addText = () => {
+        console.log('111');
+        console.log(this.state.inx);
         if(this.state.inx <= this.state.text.length) {
             let index = this.state.inx;
             index++
             this.setState({inx: index});
-            if(document.getElementById("J_text") !== null)
-               document.getElementById("J_text").innerHTML = this.state.text.slice(0, this.state.inx) + '_'
+            if(document.getElementById("J_text") !== null) {
+                document.getElementById("J_text").innerHTML = this.state.text.slice(0, this.state.inx) + '_';
+            }
             this.setState({timer: setTimeout(this.addText, 200)});
         } else {
-            document.getElementById("J_text").innerHTML = this.state.text//结束打字,移除 _ 光标
+            document.getElementById("J_text").innerHTML = this.state.text;//结束打字,移除 _ 光标
             clearTimeout(this.state.timer);
         }
     }
@@ -49,6 +52,10 @@ class Home extends React.Component{
     getMore = () => {
         this.state.page++;
         this.getList();
+    }
+    componentWillUnmount() {
+        this.setState({inx: 0});
+        clearTimeout(this.state.timer);
     }
     componentDidMount() {
        this.addText();
