@@ -9,7 +9,7 @@ class foot extends React.Component {
                 <ul className="blog-link">
                     <li><a href="http://evilbinary.org/" target="_blank" rel="noopener noreferrer">邪恶二进制</a></li>
                     <li><a href="https://www.oschina.net/" target="_blank" rel="noopener noreferrer">开源中国</a></li>
-                    <li><a href="https://kooteam.com" target="_blank" rel="noopener noreferrer">Kooteam</a></li>
+                    <li><a href="https://www.kooteam.com" target="_blank" rel="noopener noreferrer">Kooteam</a></li>
                     <li><a href="https://about.sourcegraph.com/" target="_blank" rel="noopener noreferrer">sourcegraph</a></li>
                     <li><a href="https://coolshell.cn/" target="_blank" rel="noopener noreferrer">酷壳</a></li>
                     <li><a href="https://iizhi.cn/" target="_blank" rel="noopener noreferrer">子衿</a></li>
