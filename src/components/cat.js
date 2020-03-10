@@ -10,8 +10,7 @@ class Cat extends React.Component{
 
     onKeyup = (e) => {
         if(e.keyCode === 13) {
-            let keyword = this.refs.keyword.value
-            debugger
+            let keyword = this.refs.keyword.value;
             this.props.history.push('/cat/search/' + keyword);
         }
     }

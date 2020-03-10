@@ -74,11 +74,17 @@ yarn build
 + <s> 评论系统(文章评论) </s> 
 + <s> 文章详情  </s>
 + 网页兼容性在适配
-+ 搜索
++ <s>搜索</s>
 + 加入统计
 
 ### react 设置静态资源CDN
 
 + 关于嵌套路由(https://blog.csdn.net/qq_40816649/article/details/93469857)
 + PUBLIC_URL=http://xinblog.oss-cn-qingdao.aliyuncs.com/react-blog/ yarn build
+
+
+### 问题解答
+ 
++ this.props 中找不到 history 时(http://www.leborn.me/cat/detail/2003101750448541997)
++ react-route-dom 嵌套路由(https://blog.csdn.net/qq_40816649/article/details/93469857)
 
