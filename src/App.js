@@ -10,6 +10,7 @@ import About from './components/about';
 import Detail from './components/detail';
 import Head from './components/mods/head';
 import Foot from './components/mods/foot';
+import Serach from './components/search';
 
 
 class App extends React.Component{
@@ -65,6 +66,7 @@ class App extends React.Component{
                         <Route path="/cat/about" component={About}></Route>
                         <Route path="/cat/product" component={Product}></Route>
                         <Route path="/cat/detail/:id" component={Detail}></Route>
+                        <Route path="/cat/search/:keyword" component={Serach}></Route>
                     </Cat>
                    } /> 
                 </Router>

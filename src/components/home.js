@@ -15,7 +15,8 @@ class Home extends React.Component{
             timer: 0,
             textDom: null,
             articleList: [],
-            more: false
+            more: false,
+            keyword: ""
         };
     }
     addText = () => {
@@ -53,6 +54,12 @@ class Home extends React.Component{
         this.state.page++;
         this.getList();
     }
+    onKeyup = (e) => {
+        if(e.keyCode === 13) {
+            let keyword = this.refs.keyword.value
+            this.props.history.push('/cat/search/' + keyword);
+        }
+    }
     componentWillUnmount() {
         this.setState({inx: 0});
         clearTimeout(this.state.timer);
@@ -71,7 +78,7 @@ class Home extends React.Component{
                     </div>
                     <div className="home-search">
                         <div className="searchFrom">
-                            <input type="text" className="input" placeholder="世界这么大，探索一下"/>
+                            <input type="text" className="input" ref='keyword'  onKeyUp={this.onKeyup} placeholder="世界这么大，探索一下"/>
                             <i className="icon icon-search"></i>
                         </div> 
                     </div>

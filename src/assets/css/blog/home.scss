@@ -64,13 +64,19 @@
         margin: 0px;
         padding: 0px;
         border: none;
-        width: 1440px;
+        width: 100%;
+        max-width: 1000px;
         height: 810px;
         max-height: none;
         max-width: none;
         z-index: -999999;
         left: 0px;
         top: -90px;
+    }
+    @media screen and(max-width: 600px) {
+        .bg-img{
+            display: none;
+        }
     }
     .home-text{
         margin-top: 100px;

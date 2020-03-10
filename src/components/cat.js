@@ -1,9 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, NavLink ,Link} from 'react-router-dom'
+import { NavLink,withRouter} from 'react-router-dom'
 import bg from '../img/cover1.jpg';
 
 
 class Cat extends React.Component{
+    constructor(props) {
+        super(props);
+    }
+
+    onKeyup = (e) => {
+        if(e.keyCode === 13) {
+            let keyword = this.refs.keyword.value
+            debugger
+            this.props.history.push('/cat/search/' + keyword);
+        }
+    }
     render() {
       return (
         <div>
@@ -13,7 +24,7 @@ class Cat extends React.Component{
                 </div>
                 <div className="home-search">
                     <div className="searchFrom">
-                        <input type="text" className="input" placeholder="世界这么大，探索一下"/>
+                        <input type="text" ref='keyword'  onKeyUp={this.onKeyup} className="input" placeholder="世界这么大，探索一下"/>
                         <i className="icon icon-search"></i>
                     </div> 
                 </div>
@@ -36,4 +47,4 @@ class Cat extends React.Component{
 }
 
 
-export default Cat;
+export default withRouter(Cat);
