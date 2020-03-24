@@ -35,8 +35,8 @@ class Detail extends React.Component{
         //当路由切换时
            window.scrollTo(0, 0);
         });
-        this.mounted = true
-        let id = this.props.match.params.id
+        this.mounted = true;
+        let id = this.props.match.params.id;
         this.getData(id);
     }
     componentWillUnmount() {

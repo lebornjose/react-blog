@@ -35,7 +35,7 @@ class Item extends React.Component{
                   {this.state.article.summary}
                 </div>
                 <div className="article-bom">
-                <button type="button" className="btn btn-primary"><i className="icon-book"></i> 阅读全文</button>
+                <NavLink type="button" to={'/cat/detail/' + this.state.article.articleId} className="btn btn-primary"><i className="icon-book"></i> 阅读全文</NavLink>
                 </div>
             </div>
         )
