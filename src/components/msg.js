@@ -5,9 +5,6 @@ import GitalkComponent from "gitalk/dist/gitalk-component";
 
 class Comment extends React.Component{
        //方法会在组件已经被渲染到 DOM 中后运行
-    componentDidMount() {
-
-    }
     render() {
         return(
             <div className="container blog-msg">
@@ -23,8 +20,8 @@ class Comment extends React.Component{
                     repo: 'blog-comment',
                     owner: 'lebornjose',
                     admin: ['lebornjose'],
-                    id: "111111",  
-                    distractionFreeMode: false 
+                    id: "111111",
+                    distractionFreeMode: false
                     }} />
             </div>
         )

@@ -18,10 +18,8 @@ class Home extends React.Component{
             more: false,
             keyword: ""
         };
-    }
+    };
     addText = () => {
-        console.log('111');
-        console.log(this.state.inx);
         if(this.state.inx <= this.state.text.length) {
             let index = this.state.inx;
             index++
@@ -34,7 +32,7 @@ class Home extends React.Component{
             document.getElementById("J_text").innerHTML = this.state.text;//结束打字,移除 _ 光标
             clearTimeout(this.state.timer);
         }
-    }
+    };
     getList = () => {
         util.get('/blog/home/page/' + this.state.page).then((res) => {
             if(res.length===0) {
@@ -49,25 +47,25 @@ class Home extends React.Component{
                 this.setState({articleList: this.state.articleList.concat(res)});
             }
         })
-    }
+    };
     getMore = () => {
         this.state.page++;
         this.getList();
-    }
+    };
     onKeyup = (e) => {
         if(e.keyCode === 13) {
-            let keyword = this.refs.keyword.value
+            let keyword = this.refs.keyword.value;
             this.props.history.push('/cat/search/' + keyword);
         }
-    }
+    };
     componentWillUnmount() {
         this.setState({inx: 0});
         clearTimeout(this.state.timer);
-    }
+    };
     componentDidMount() {
        this.addText();
        this.getList();
-    }
+    };
     render() {
         let DOM = this.state.articleList.map((item, index) => ( <ItemArticle key={index} item={item}></ItemArticle>))
         return (
@@ -80,7 +78,7 @@ class Home extends React.Component{
                         <div className="searchFrom">
                             <input type="text" className="input" ref='keyword'  onKeyUp={this.onKeyup} placeholder="世界这么大，探索一下"/>
                             <i className="icon icon-search"></i>
-                        </div> 
+                        </div>
                     </div>
                     <div className="home-menu">
                         <ul>

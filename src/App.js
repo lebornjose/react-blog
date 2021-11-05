@@ -32,13 +32,13 @@ class App extends React.Component{
     }
     scrollAnimation(currentY, targetY) {
         // 计算需要移动的距离
-        let needScrollTop = targetY - currentY
-        let _currentY = currentY
+        let needScrollTop = targetY - currentY;
+        let _currentY = currentY;
         setTimeout(() => {
         // 一次调用滑动帧数，每次调用会不一样
-        const dist = Math.ceil(needScrollTop / 10)
-        _currentY += dist
-        window.scrollTo(_currentY, currentY)
+        const dist = Math.ceil(needScrollTop / 10);
+        _currentY += dist;
+        window.scrollTo(_currentY, currentY);
         // 如果移动幅度小于十个像素，直接移动，否则递归调用，实现动画效果
         if (needScrollTop > 10 || needScrollTop < -10) {
             this.scrollAnimation(_currentY, targetY)
@@ -46,20 +46,19 @@ class App extends React.Component{
             window.scrollTo(_currentY, targetY)
         }
         }, 1);
-    } 
+    }
     goTop = () => {
         let currentY = document.documentElement.scrollTop || document.body.scrollTop;
         this.scrollAnimation(currentY, 0);
-    }
+    };
     render(){
-        const { history } = this.props;
         return(
             <div>
                 <Router>
                    <Head isTop={this.state.isTop} ></Head>
                    <Route exact path="/" component={Home} />
                    <Route exact path="/home" component={Home} />
-                   <Route path="/cat" render={() => 
+                   <Route path="/cat" render={() =>
                     <Cat>
                         <Route path="/cat/category" component={Category}></Route>
                         <Route path="/cat/msg" component={Msg}></Route>
@@ -68,11 +67,11 @@ class App extends React.Component{
                         <Route path="/cat/detail/:id" component={Detail}></Route>
                         <Route path="/cat/search/:keyword" component={Serach}></Route>
                     </Cat>
-                   } /> 
+                   } />
                 </Router>
-                <Foot></Foot> 
+                <Foot></Foot>
                 <a onClick={this.goTop} className={`to-top ${this.state.isTop ? 'show' : 'hidden'} `}><i className="icon-arrow-up"></i></a>
-            </div> 
+            </div>
         )
     }
 }

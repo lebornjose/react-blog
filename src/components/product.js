@@ -3,8 +3,6 @@ import Sidebar from './sidebar/index';
 import ItemProduct from '../components/product/item';
 import util from '../utils/index';
 
-
-
 class Product extends React.Component{
     constructor(props) {
         super(props);
@@ -15,11 +13,11 @@ class Product extends React.Component{
     getList = () => {
         util.get('/blog/home/jsonProduct').then((res) => {
             this.setState({productList: res});
-        })
-    }
+        });
+    };
     componentDidMount() {
        this.getList();
-    }
+    };
     render() {
         let DOM = this.state.productList.map((item, index) => ( <ItemProduct key={index} item={item}></ItemProduct>))
         return (
@@ -31,7 +29,7 @@ class Product extends React.Component{
                     <div className="col-md-4">
                         <Sidebar></Sidebar>
                     </div>
-                </div>    
+                </div>
             </div>
         )
     }

@@ -15,7 +15,7 @@ class Detail extends React.Component{
             next: null,
             articleId: ''
         }
-    }
+    };
     getData(id) {
         util.get("/blog/home/jsonDetail/" + id).then((data) => {
             if(this.mounted){
@@ -23,13 +23,13 @@ class Detail extends React.Component{
                 console.log(this.state.next)
             }
         })
-    }
+    };
     getArticle(id) {
         this.props.history.push('/cat/detail/' + id);
         util.get("/blog/home/jsonDetail/" + id).then((data) => {
             this.setState({article: data.article[0], detail: data.detailVO, perv: data.article[1], next: data.article[2]});
         })
-    }
+    };
     componentDidMount() {
         this.props.history.listen(() => {
         //当路由切换时
@@ -38,10 +38,10 @@ class Detail extends React.Component{
         this.mounted = true;
         let id = this.props.match.params.id;
         this.getData(id);
-    }
+    };
     componentWillUnmount() {
         this.mounted = false
-    }
+    };
     render() {
         return (
             <div className="container blog-detail">
@@ -55,7 +55,7 @@ class Detail extends React.Component{
                                 <span><i className="icon-folder-open"></i>技术</span>
                                 <span className="tag"><i className="icon-eye-open"></i>{this.state.article.reads}</span>
                             </div>
-                        </div>    
+                        </div>
                         <div className="content" dangerouslySetInnerHTML={{ __html:this.state.detail.content}}></div>
                         <div className="prev-next">
                             {
@@ -79,13 +79,13 @@ class Detail extends React.Component{
                             repo: 'blog-comment',
                             owner: 'lebornjose',
                             admin: ['lebornjose'],
-                            id: this.state.article.articleId,  
-                            distractionFreeMode: false 
+                            id: this.state.article.articleId,
+                            distractionFreeMode: false
                             }} /> : ''
-                        } 
+                        }
                     </div>
                     <div className="col-md-4">
-                       <Sidebar></Sidebar> 
+                       <Sidebar></Sidebar>
                     </div>
                 </div>
             </div>

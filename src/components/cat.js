@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink,withRouter} from 'react-router-dom'
+import { NavLink,withRouter} from 'react-router-dom';
 import bg from '../img/cover1.jpg';
 
 
@@ -25,7 +25,7 @@ class Cat extends React.Component{
                     <div className="searchFrom">
                         <input type="text" ref='keyword'  onKeyUp={this.onKeyup} className="input" placeholder="世界这么大，探索一下"/>
                         <i className="icon icon-search"></i>
-                    </div> 
+                    </div>
                 </div>
                 <div className="home-menu">
                     <ul>
@@ -39,7 +39,7 @@ class Cat extends React.Component{
                 </div>
             </div>
             {this.props.children}
-        </div>    
+        </div>
 
       )
     }
