@@ -34,7 +34,7 @@ class Cat extends React.Component{
                         <li><NavLink to="/cat/msg" activeClassName='active'><i className="icon-comments"></i>&nbsp;留言</NavLink></li>
                         <li><NavLink to="/cat/product" activeClassName='active'><i className="icon-book"></i>&nbsp;产品</NavLink></li>
                         <li><NavLink to="/cat/about" activeClassName='active'><i className="icon-user"></i>&nbsp;关于</NavLink></li>
-                        <li><a target="_blank" rel="noopener noreferrer" href="http://api.leborn.me/blog/home/music"><i className="icon-film"></i>&nbsp;音乐</a></li>
+                        {/*<li><a target="_blank" rel="noopener noreferrer" href="http://api.leborn.me/blog/home/music"><i className="icon-film"></i>&nbsp;音乐</a></li>*/}
                     </ul>
                 </div>
             </div>
