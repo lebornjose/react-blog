@@ -17,9 +17,9 @@
     "react-scripts": "3.4.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "PUBLIC_URL=https://xinblog.oss-cn-qingdao.aliyuncs.com/ react-scripts build",
-    "test": "react-scripts test",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider PUBLIC_URL=https://xinblog.oss-cn-qingdao.aliyuncs.com/ react-scripts build",
+    "test": "NODE_OPTIONS=--openssl-legacy-provider react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -38,7 +38,7 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^4.13.1",
+    "sass": "^1.49.7",
     "sass-loader": "^8.0.2"
   },
   "proxy": "http://www.leborn.me"
