@@ -15,8 +15,8 @@ class About extends React.Component{
         }
     }
     componentDidMount() {
-       util.get("/blog/home/jsonAbout/1504202124283691142").then((res) => {
-          this.setState({content: res.content});
+       util.get("/api/pages/1504202124283691142").then((res) => {
+          this.setState({content: res.data.content});
        })
     }
     render() {

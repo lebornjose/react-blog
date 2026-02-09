@@ -16,7 +16,7 @@ class Item extends React.Component{
     render() {
         return (
             <div className="item-article">
-                <h2 className="title"><NavLink to={'/cat/detail/' + this.state.article.articleId}>{this.state.article.title}</NavLink></h2>
+                <h2 className="title"><NavLink to={'/cat/detail/' + this.state.article.article_id}>{this.state.article.title}</NavLink></h2>
                 <div className="article-info">
                     <span>
                        <i className="icon-user"></i> {this.state.article.author}
@@ -35,7 +35,7 @@ class Item extends React.Component{
                   {this.state.article.summary}
                 </div>
                 <div className="article-bom">
-                <NavLink type="button" to={'/cat/detail/' + this.state.article.articleId} className="btn btn-primary"><i className="icon-book"></i> 阅读全文</NavLink>
+                <NavLink type="button" to={'/cat/detail/' + this.state.article.article_id} className="btn btn-primary"><i className="icon-book"></i> 阅读全文</NavLink>
                 </div>
             </div>
         )

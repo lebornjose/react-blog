@@ -12,7 +12,8 @@ class Category extends React.Component{
         }
     }
     getData = () => {
-       util.get('/blog/home/jsonCategory').then((data) => {
+       util.get('/api/categories/list').then((res) => {
+           const data = res.data.list;
            data.map((item, index) => {
                item.child = [];
            });
@@ -21,7 +22,8 @@ class Category extends React.Component{
     };
     getArticle(categoryId,index) {
         if(this.state.list[index].child.length === 0) {
-            util.get('/blog/home/jsonList/' + categoryId).then((data) => {
+            util.get(`/api/articles/list?categoryId=${categoryId}`).then((res) => {
+                const data = res.data.articles;
                 let articleList = this.state.list;
                 articleList[index].child = data;
                 this.setState({list: articleList});
@@ -35,10 +37,10 @@ class Category extends React.Component{
        this.getData();
     };
     render() {
-        let DOM = this.state.list.map((item, index) => ( <li key={index} onClick={ () => this.getArticle(item.categoryId, index)}><i className="icon-folder-open"></i>{item.title}
+        let DOM = this.state.list.map((item, index) => ( <li key={index} onClick={ () => this.getArticle(item.category_id, index)}><i className="icon-folder-open"></i>{item.title}
             {item.child.length !==0 ?
             <ul className="article-child">
-                {item.child.map((itemChild, inx) => (<li key={inx} onClick={() => this.detail(itemChild.articleId)}><i className="icon-file"></i><a>{itemChild.title}</a></li>))}
+                {item.child.map((itemChild, inx) => (<li key={inx} onClick={() => this.detail(itemChild.article_id)}><i className="icon-file"></i><a>{itemChild.title}</a></li>))}
             </ul> : ''}
         </li>));
         return (

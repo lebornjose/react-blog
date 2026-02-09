@@ -17,17 +17,19 @@ class Detail extends React.Component{
         }
     };
     getData(id) {
-        util.get("/blog/home/jsonDetail/" + id).then((data) => {
+        util.get("/api/articles/" + id).then((res) => {
+            const data = res.data;
             if(this.mounted){
-                this.setState({article: data.article[0], detail: data.detailVO, perv: data.article[1], next: data.article[2]});
+                this.setState({article: data, perv: data.next, next: data.prev});
                 console.log(this.state.next)
             }
         })
     };
     getArticle(id) {
         this.props.history.push('/cat/detail/' + id);
-        util.get("/blog/home/jsonDetail/" + id).then((data) => {
-            this.setState({article: data.article[0], detail: data.detailVO, perv: data.article[1], next: data.article[2]});
+        util.get("/api/articles/" + id).then((res) => {
+            const data = res.data;
+            this.setState({article: data, perv: data.next, next: data.prev});
         })
     };
     componentDidMount() {
@@ -56,19 +58,19 @@ class Detail extends React.Component{
                                 <span className="tag"><i className="icon-eye-open"></i>{this.state.article.reads}</span>
                             </div>
                         </div>
-                        <div className="content" dangerouslySetInnerHTML={{ __html:this.state.detail.content}}></div>
+                        <div className="content" dangerouslySetInnerHTML={{ __html:this.state.article.content}}></div>
                         <div className="prev-next">
                             {
-                                this.state.perv ?  <div className="perv">
-                                <a className="arrow" onClick={() => this.getArticle(this.state.perv.articleId)}><i className="icon-angle-left"></i>上一页</a>
-                                 <a className="article-title" onClick={() => this.getArticle(this.state.perv.articleId)}>{this.state.perv.title}</a>
+                                this.state.next ?  <div className="perv">
+                                <a className="arrow" onClick={() => this.getArticle(this.state.next.article_id)}><i className="icon-angle-left"></i>上一页</a>
+                                 <a className="article-title" onClick={() => this.getArticle(this.state.next.article_id)}>{this.state.next.title}</a>
                                 {/* <span><i className="icon-tags"></i>{this.state.perv.keyword}</span> */}
                                  </div> : ''
                             }
                             {
-                               this.state.next ? <div className="next">
-                                <a className="arrow" onClick={() => this.getArticle(this.state.next.articleId)}>下一页<i className="icon-angle-right"></i></a>
-                                <a className="article-title" onClick={() => this.getArticle(this.state.next.articleId)} >{this.state.next.title }</a>
+                               this.state.prev ? <div className="next">
+                                <a className="arrow" onClick={() => this.getArticle(this.state.prev.article_id)}>下一页<i className="icon-angle-right"></i></a>
+                                <a className="article-title" onClick={() => this.getArticle(this.state.prev.article_id)} >{this.state.prev.title }</a>
                                 {/* {<span className="tag"><i className="icon-tags"></i>{this.state.next.keyword}</span> } */}
                                 </div> : ''
                              }
