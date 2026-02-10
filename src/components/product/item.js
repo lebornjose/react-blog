@@ -25,7 +25,7 @@ class ItemProduct extends React.Component{
         return (
             <div className="item-product row">
                 <div className="left col-md-4">
-                    <div className="cover" style={this.coverStyle(this.props.item.commendId)}></div>
+                    <div className="cover" style={this.coverStyle(this.props.item.commend_id)}></div>
                 </div>
                 <div className="right col-md-8">
                     <h3 className="title">{this.props.item.title}</h3>

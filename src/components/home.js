@@ -34,17 +34,17 @@ class Home extends React.Component{
         }
     };
     getList = () => {
-        util.get('/blog/home/page/' + this.state.page).then((res) => {
-            if(res.length===0) {
+        util.get(`/api/articles/list?page=${this.state.page}`).then((res) => {
+            if(res.data.length===0) {
                this.setState({more: true});
                setTimeout(() => {
                 this.setState({more: false});
                }, 2000);
             }
             if(this.state.articleList.length === 0) {
-                this.setState({articleList: res});
+                this.setState({articleList: res.data.articles});
             } else {
-                this.setState({articleList: this.state.articleList.concat(res)});
+                this.setState({articleList: this.state.articleList.concat(res.data.articles)});
             }
         })
     };

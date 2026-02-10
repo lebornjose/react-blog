@@ -11,8 +11,9 @@ class Product extends React.Component{
         }
     }
     getList = () => {
-        util.get('/blog/home/jsonProduct').then((res) => {
-            this.setState({productList: res});
+        util.get('/api/recommends/list?page=1').then((res) => {
+            const data = res.data.list;
+            this.setState({productList: data});
         });
     };
     componentDidMount() {
