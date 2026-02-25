@@ -25,6 +25,12 @@
     .content{
         padding: 10px 0;
         line-height: 25px;
+        p {
+            white-space: normal;
+        }
+        span {
+            white-space: normal!important;
+        }
     }
 
     .prev-next{
