@@ -60,9 +60,10 @@ class Welcome extends React.Component{
         }
 		this.setState({info: info});
     }
-    componentWillMount() {
-        // eslint-disable-next-line
-        this.setState({ip: returnCitySN.cip, city: returnCitySN.cname});
+    componentDidMount() {
+        if (window.returnCitySN) {
+            this.setState({ip: window.returnCitySN.cip, city: window.returnCitySN.cname});
+        }
         this.getOSAndBrowser();
     }
     render() {

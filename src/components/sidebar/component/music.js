@@ -3,10 +3,14 @@ import 'aplayer/dist/APlayer.min.css';
 import APlayer from 'aplayer';
 
 class Music extends React.Component{
-    //方法会在组件已经被渲染到 DOM 中后运行
+    constructor(props) {
+        super(props);
+        this.musicRef = React.createRef();
+        this.player = null;
+    }
     componentDidMount() {
-        const ap = new APlayer({
-            container: document.getElementById('J_music'),
+        this.player = new APlayer({
+            container: this.musicRef.current,
             mini: false,
             autoplay: false,
             theme: '#FADFA3',
@@ -102,14 +106,17 @@ class Music extends React.Component{
             ]
         });
     }
-    //  清除定时器
     componentWillUnmount() {
+        if (this.player && this.player.destroy) {
+            this.player.destroy();
+        }
+        this.player = null;
     }
     render() {
         return (
             <div className="sidebar-music sidebar-block">
                 <h3 className="title"><i className="icon-music"></i>最近在听</h3>
-                <div className="content" id="J_music">2112</div>
+                <div className="content" ref={this.musicRef}></div>
             </div>
         )
     }

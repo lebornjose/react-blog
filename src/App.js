@@ -21,13 +21,17 @@ class App extends React.Component{
         };
     }
     componentDidMount() {
-        window.onscroll = () => {
-            let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            if (scrollTop > 500) {
-                this.setState({isTop: true});
-            } else {
-                this.setState({isTop: false});
-            }
+        window.addEventListener('scroll', this.handleScroll);
+    }
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+    handleScroll = () => {
+        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop > 500) {
+            this.setState({isTop: true});
+        } else {
+            this.setState({isTop: false});
         }
     }
     scrollAnimation(currentY, targetY) {

@@ -7,11 +7,8 @@ class Item extends React.Component{
         super(props);
         this.state = {
             article: props.item,
-            num: 7
+            num: parseInt(Math.random()*1000)
         }
-    }
-    componentWillMount() {    
-        this.setState({num: parseInt(Math.random()*1000)});
     }
     render() {
         return (

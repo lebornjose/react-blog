@@ -18,6 +18,7 @@ class Home extends React.Component{
             more: false,
             keyword: ""
         };
+        this.keywordRef = React.createRef();
     };
     addText = () => {
         if(this.state.inx <= this.state.text.length) {
@@ -49,17 +50,18 @@ class Home extends React.Component{
         })
     };
     getMore = () => {
-        this.state.page++;
-        this.getList();
+        this.setState(
+            prevState => ({page: prevState.page + 1}),
+            this.getList
+        );
     };
     onKeyup = (e) => {
         if(e.keyCode === 13) {
-            let keyword = this.refs.keyword.value;
+            let keyword = this.keywordRef.current ? this.keywordRef.current.value : '';
             this.props.history.push('/cat/search/' + keyword);
         }
     };
     componentWillUnmount() {
-        this.setState({inx: 0});
         clearTimeout(this.state.timer);
     };
     componentDidMount() {
@@ -76,7 +78,7 @@ class Home extends React.Component{
                     </div>
                     <div className="home-search">
                         <div className="searchFrom">
-                            <input type="text" className="input" ref='keyword'  onKeyUp={this.onKeyup} placeholder="世界这么大，探索一下"/>
+                            <input type="text" className="input" ref={this.keywordRef}  onKeyUp={this.onKeyup} placeholder="世界这么大，探索一下"/>
                             <i className="icon icon-search"></i>
                         </div>
                     </div>

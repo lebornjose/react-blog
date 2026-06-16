@@ -1,9 +1,24 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import axios from 'axios';
+import APlayer from 'aplayer';
 import App from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+jest.mock('axios');
+jest.mock('aplayer');
+
+test('renders home page', () => {
+  axios.get.mockResolvedValue({
+    status: 200,
+    data: {
+      data: {
+        articles: []
+      }
+    }
+  });
+  APlayer.mockImplementation(() => ({destroy: jest.fn()}));
+
+  const { getByPlaceholderText } = render(<App />);
+
+  expect(getByPlaceholderText('世界这么大，探索一下')).toBeInTheDocument();
 });

@@ -33,7 +33,7 @@ class Detail extends React.Component{
         })
     };
     componentDidMount() {
-        this.props.history.listen(() => {
+        this.unlisten = this.props.history.listen(() => {
         //当路由切换时
            window.scrollTo(0, 0);
         });
@@ -42,7 +42,10 @@ class Detail extends React.Component{
         this.getData(id);
     };
     componentWillUnmount() {
-        this.mounted = false
+        this.mounted = false;
+        if (this.unlisten) {
+            this.unlisten();
+        }
     };
     render() {
         return (
