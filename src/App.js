@@ -11,6 +11,7 @@ import Detail from './components/detail';
 import Head from './components/mods/head';
 import Foot from './components/mods/foot';
 import Serach from './components/search';
+import Music from './components/sidebar/component/music';
 
 
 class App extends React.Component{
@@ -72,6 +73,7 @@ class App extends React.Component{
                         <Route path="/cat/search/:keyword" component={Serach}></Route>
                     </Cat>
                    } />
+                   <Music></Music>
                 </Router>
                 <Foot></Foot>
                 <a onClick={this.goTop} className={`to-top ${this.state.isTop ? 'show' : 'hidden'} `}><i className="icon-arrow-up"></i></a>

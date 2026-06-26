@@ -33,6 +33,39 @@
     }
 }
 
+.music-sidebar-slot{
+    min-height: 98px;
+}
+
+.music-hidden-host{
+    display: none;
+}
+
+.music-floating-player{
+    position: fixed;
+    left: 18px;
+    bottom: 18px;
+    z-index: 1000;
+    width: 66px;
+    height: 66px;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+
+    &.hidden{
+        display: none;
+    }
+
+    &.show{
+        display: block;
+    }
+
+    .aplayer{
+        margin: 0;
+        box-shadow: none;
+    }
+}
+
 .sidebar-info{
     text-align: center;
     padding: 15px;

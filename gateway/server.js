@@ -31,6 +31,8 @@ app.post("/ai/run", async (req, res) => {
   }
 });
 
-app.listen(4000, () => {
-  console.log("AI Gateway running on http://localhost:4000");
+const port = process.env.PORT || 4001;
+
+app.listen(port, () => {
+  console.log(`AI Gateway running on http://localhost:${port}`);
 });

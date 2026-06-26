@@ -2,7 +2,7 @@ import React from 'react';
 import Info from './component/info';
 import Nav from './component/nav';
 import Welcome from './component/welcome';
-import Music from './component/music';
+import { MusicSlot } from './component/music';
 
 export default () => {
     return (
@@ -10,7 +10,7 @@ export default () => {
             <Info></Info>
             <Nav></Nav>
             <Welcome></Welcome>
-            <Music></Music>
+            <MusicSlot></MusicSlot>
         </div>
     )
 }

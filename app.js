@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3003;
 const app = express();
 
 // 通常用于加载静态资源

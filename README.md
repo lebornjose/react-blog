@@ -111,7 +111,7 @@ yarn start
 默认会启动 CRA 开发服务，通常访问：
 
 ```text
-http://localhost:3000
+http://localhost:3002
 ```
 
 ### 运行测试
@@ -152,10 +152,10 @@ PUBLIC_URL=https://xinblog.oss-cn-qingdao.aliyuncs.com/
 
 ```bash
 npm run build
-node app.js
+npm run serve
 ```
 
-服务默认监听 `4000` 端口，可通过 `PORT` 环境变量覆盖：
+服务默认监听 `3003` 端口，可通过 `PORT` 环境变量覆盖：
 
 ```bash
 PORT=8080 node app.js
@@ -182,7 +182,7 @@ node server.js
 服务默认监听：
 
 ```text
-http://localhost:4000
+http://localhost:4001
 ```
 
 注意：`gateway/executor.js` 当前写入路径为 `../frontend/src/generated.ts`，该目录在当前项目中并不存在，运行前需要根据实际目录结构调整。
