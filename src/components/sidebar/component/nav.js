@@ -15,7 +15,7 @@ class Nav extends React.Component{
                     <li><a href=""><i className="icon-link"></i>我的友链</a></li>
                     <li><NavLink to="/cat/msg"><i className="icon-comments"></i>留言板</NavLink></li>
                     <li><NavLink to="/cat/product"><i className="icon-flag"></i>项目</NavLink></li>
-                    <li><a target="_blank" rel="noopener noreferrer" href="http://www.leborn.me/blog/home/music"><i className="icon-film"></i>音乐</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.leborn.me/blog/home/music"><i className="icon-film"></i>音乐</a></li>
                 </ul>
             </div>
         )

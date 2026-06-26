@@ -257,7 +257,7 @@ class Home extends React.Component{
                             <li><a href="/cat/msg"><i className="icon-comments"></i>&nbsp;留言</a></li>
                             <li><a href="/cat/product"><i className="icon-book"></i>&nbsp;产品</a></li>
                             <li><a href="/cat/about"><i className="icon-user"></i>&nbsp;关于</a></li>
-                            <li><a target="_blank" rel="noopener noreferrer" href="http://www.leborn.me/blog/home/music"><i className="icon-film"></i>&nbsp;音乐</a></li>
+                            <li><a target="_blank" rel="noopener noreferrer" href="https://www.leborn.me/blog/home/music"><i className="icon-film"></i>&nbsp;音乐</a></li>
                         </ul>
                     </div>
                     <div id="J_text" className="home-text"></div>
